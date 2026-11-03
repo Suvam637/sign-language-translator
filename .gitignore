@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+demo_data/
+demo_models/
+models/*
+!models/.gitkeep
+data/own/static/*.csv
+data/own/dynamic/*/
+data/external/static/*.csv
+data/external/dynamic/*/

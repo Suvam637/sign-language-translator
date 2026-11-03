@@ -1,0 +1,24 @@
+# Sign Language Translator - Python 3.11+
+#
+# MediaPipe removed its classic `mp.solutions` API in 0.10.30, and 0.10.21 (which still has it
+# and bundles its models) has wheels only up to Python 3.12. The code supports both:
+#   Python 3.11 / 3.12 -> mediapipe 0.10.21  (legacy API, nothing to download)
+#   Python 3.13+       -> mediapipe >= 0.10.30 (Tasks API; run `python scripts/download_models.py` once)
+mediapipe==0.10.21; python_version < "3.13"
+mediapipe>=0.10.30; python_version >= "3.13"
+
+# mediapipe already depends on opencv-contrib-python (the GUI build). Do NOT also install
+# opencv-python / opencv-python-headless: two cv2 packages in one environment conflict.
+opencv-contrib-python>=4.9
+numpy>=1.26
+scikit-learn>=1.4
+joblib>=1.3
+torch>=2.2
+matplotlib>=3.8
+tqdm>=4.66
+
+# optional: spoken output (press S in predict_live.py / --auto-speak)
+# pyttsx3>=2.90
+
+# development
+# pytest>=8
